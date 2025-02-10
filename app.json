@@ -1,0 +1,47 @@
+{
+  "name": "NeonFlareX",
+  "description": "Telegram User Bot using Pyrogram framework",
+  "repository": "https://github.com/devineparadox/Neon-FlareX0",
+  "env": {
+    "API_ID": {
+      "description": "API ID from my.telegram.org/apps",
+      "value": "",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "API Hash from my.telegram.org/apps",
+      "value": "",
+      "required": true
+    },
+    "SESSION": {
+      "description": "Pyrogram String Session",
+      "value": "",
+      "required": true
+    },
+    "TOKEN": {
+      "description": "Create your bot in @BotFather",
+      "value": "",
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "Add IDs of owners",
+      "value": "",
+      "required": true
+    },
+    "GROUP_ID": {
+      "description": "Add group ID where bot must be admin and userbot must be there",
+      "value": "",
+      "required": true
+    },
+    "DB_NAME": {
+      "description": "Add MongoDB Name (any)",
+      "value": "",
+      "required": true
+    },
+    "DB_URL": {
+      "description": "Add MongoDB URI",
+      "value": "",
+      "required": true
+    }
+  }
+}
