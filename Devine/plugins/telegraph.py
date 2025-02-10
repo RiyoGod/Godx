@@ -1,7 +1,6 @@
 import requests
 import time
 import asyncio
-from telegraph import upload_file
 from pyrogram import filters
 from Devine import devine, MODULE
 from config import HANDLER
@@ -36,17 +35,6 @@ async def upload_to_catbox(message, file_path):
     else:
         await waiting_message.edit("<b>ғᴀɪʟᴇᴅ ᴛᴏ ᴜᴘʟᴏᴀᴅ ᴛʜᴇ ғɪʟᴇ.</b>")
 
-async def upload_to_telegraph(message, file_path):
-    waiting_message = await send_temp_message(message, "ᴡᴀɪᴛ")  
-    start_time = time.time()
-
-    try:
-        upload_url = upload_file(file_path)[0]
-        upload_time = round(time.time() - start_time, 2)
-        await waiting_message.edit(f"<b>ᴜᴘʟᴏᴀᴅᴇᴅ ᴛᴏ ᴛᴇʟᴇɢʀᴀᴘʜ ɪɴ {upload_time} sᴇᴄᴏɴᴅs:</b>\n\n<a href='https://telegra.ph{upload_url}'>https://telegra.ph{upload_url}</a>")
-    except Exception as e:
-        await waiting_message.edit(f"<b>ᴛᴇʟᴇɢʀᴀᴘʜ ᴜᴘʟᴏᴀᴅ ғᴀɪʟᴇᴅ:</b>\n<code>{e}</code>")
-
 async def handle_upload(client, message, target_message):
     media = target_message.photo or target_message.video or target_message.document
     if not media:
@@ -57,11 +45,7 @@ async def handle_upload(client, message, target_message):
         return await message.reply("<b>ғɪʟᴇ sɪᴢᴇ ᴇxᴄᴇᴇᴅs 50 ᴍʙ ʟɪᴍɪᴛ.</b>")
 
     file_path = await target_message.download()
-
-    if target_message.photo:
-        await upload_to_telegraph(message, file_path)
-    else:
-        await upload_to_catbox(message, file_path)
+    await upload_to_catbox(message, file_path)  
 
 @devine.on_message(filters.command("tgm", prefixes=HANDLER) & filters.me)
 async def upload_command(client, message):
@@ -73,7 +57,7 @@ async def upload_command(client, message):
 
 __mod__ = "TGM"  
 __help__ = """  
-• /tgm - ᴜᴘʟᴏᴀᴅ ᴘʜᴏᴛᴏs ᴛᴏ ᴛᴇʟᴇɢʀᴀᴘʜ, ᴏᴛʜᴇʀ ғɪʟᴇs ᴛᴏ ᴄᴀᴛʙᴏx.
+• /tgm - ᴜᴘʟᴏᴀᴅ ᴘʜᴏᴛᴏs ᴀɴᴅ ғɪʟᴇs ᴛᴏ ᴄᴀᴛʙᴏx.
 """  
 
 MODULE.append({"module": __mod__, "help": __help__})
