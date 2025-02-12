@@ -17,7 +17,7 @@ BOT_API_TOKEN = "7226701592:AAFl69s6ea_yi24FrXpVN8FmznwCM7-alao"
 CREDENTIALS_FOLDER = 'sessions'
 
 # MongoDB connection
-MONGO_URI = "mongodb://localhost:27017"
+MONGO_URI = "mongodb+srv://admin22:admin22@cluster0.9lqp0ci.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 client = MongoClient(MONGO_URI)
 db = client["autobot"]
 allowed_users_collection = db["allowed_users"]
