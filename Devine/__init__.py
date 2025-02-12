@@ -36,12 +36,12 @@ def get_readable_time(seconds: int) -> str:
 
 logger = logging.getLogger(__name__)
 
-DB_URL = os.getenv("DB_URL", "")
-API_ID = int(os.getenv("API_ID", ""))
-API_HASH = os.getenv("API_HASH", "")
-SESSION = os.getenv("SESSION", "")
-TOKEN = os.getenv("TOKEN", "")
-DB_NAME = os.getenv("DB_NAME", "")
+DB_URL = os.getenv("DB_URL", "mongodb+srv://jc07cv9k3k:bEWsTrbPgMpSQe2z@cluster0.nfbxb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+API_ID = int(os.getenv("API_ID", "26416419"))
+API_HASH = os.getenv("API_HASH", "c109c77f5823c847b1aeb7fbd4990cc4")
+SESSION = os.getenv("SESSION", "BQGTFSMAGFSHoO6fzim5zwSjuJcxbG21Nmlvatg3cDPmGFnFPeMh5d7Kn1wlc1Hbb2V4BXWecDBVy2KnkBYbJ4A_p9_qbx1e8ajByK7Oy8uw8GRnQo_6TTz3MP1MeTeZ0z6sGiIw2IU2e_xC_w7sCN5tRLC8-3uFuDbS2_J5rU0UBVyJq9293FfKAOW8WsnaU30ZEr9sxcc1GOlplF6x8NRla_svibYnOFXXIt-sbrc1QpxJR5puoYefgnVnPa3v3Uvbb2Yv1eEfo0OfFTwhL0Zijjm69320RfEIy34GjeolAxNfdUG6abYrm6V_8oMTpPo8T7xAnP2nOw5UNNiUjRCflvB55QAAAAHJtXFRAA")
+TOKEN = os.getenv("TOKEN", "7636486844:AAFs25A-FAXvjNSAro_LthgB8GamrlZ_5n4")
+DB_NAME = os.getenv("DB_NAME", "None")
 
 cli = motor.motor_asyncio.AsyncIOMotorClient(DB_URL)
 db=cli[DB_NAME]
