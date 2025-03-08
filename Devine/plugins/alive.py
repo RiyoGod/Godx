@@ -16,7 +16,7 @@ async def alive():
     uptime = get_readable_time(time.time() - StartTime)
     ping_time = round((time.time() - StartTime) * 1000, 3)
 
-    url = "https://files.catbox.moe/dndxpg.mp4"
+    url = "https://files.catbox.moe/ln7ih2.mp4"
 
     ALIVE_TEXT = f"""ɪ'ᴍ ᴀʟɪᴠᴇ ᴍᴀꜱᴛᴇʀ
 
@@ -25,7 +25,7 @@ async def alive():
 ⟐ <b>ᴘɪɴɢ :</b> {ping_time} ms
 ⟐ <b>ᴘʏᴛʜᴏɴ :</b> {pyrover}
 
-<b>ᴘᴏᴡᴇʀᴇᴅ ʙʏ [ᴅᴇᴠɪɴᴇ ɴᴇᴛᴡᴏʀᴋ](devine_network.t.me)</b>"""
+<b>ᴘᴏᴡᴇʀᴇᴅ ʙʏ [ᴜɴᴄᴏᴜɴᴛᴀʙʟᴇᴀᴜʀᴀ](uncountableaura.t.me)</b>"""
 
     return ALIVE_TEXT, url
 
